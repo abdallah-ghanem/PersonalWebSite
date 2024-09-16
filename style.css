@@ -110,3 +110,51 @@ header {
     color: #007bff; /* Change color on hover */
 }
 
+
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-top: 65px;
+    margin-bottom: 10px;
+    color: #33469e;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;/* to make card down each other when minimiz screen */
+}
+.card {
+    background-color: #fff; /* White background */
+    width: 21.2em;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+    padding: 20px;/* make soance in block */
+    margin: 20px;/* make space between element and each other */
+    border-radius: 15px;
+    transition: 0.7s ease;
+}
+.card:hover{
+    transform: scale(1.2);
+}
+
+.icon {
+    color: #007bff; /* Blue icon color */
+    font-size: 8em;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.info h3 {
+    color: #000; /* Black text color */
+    margin-bottom: 2px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.7em;
+}
+.info p {
+    color: #000000; /* Gray text color */
+    text-align: center;
+}
