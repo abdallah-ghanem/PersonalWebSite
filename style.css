@@ -54,7 +54,7 @@ header {
     background: url(img/Untitled\ design.png);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;/* this line don't work at ipone */
+    /*background-attachment: fixed;/* this line don't work at ipone */
 }
 
 .main h2 {
@@ -161,15 +161,16 @@ header {
 
 
 
-.project{
-    background-color: black;
+.projects {
+    margin-top: 100px;
+    background: linear-gradient(to right, #47c9e4, #f06b97);
 }
 .project .content{
     margin-top: 30px;
 }
 .project-card {
-    background-color: #ffffff;
-    border: 1px solid #fff;
+    background-color: #b1adad;
+    border: 1px solid #a09e9e;
     min-height: 14em;
     width: 23em;
     border-radius: 15px;
@@ -179,20 +180,13 @@ header {
     /*width: 300px; /* Adjust width as needed */
     margin: 20px; /* Add spacing between cards */
     transition: 0.7s ease;
+    display: grid; /* Use grid layout for two columns */
+    grid-template-rows: 70% 1fr; /* Define column widths: 70% for image, 1fr for text */ 
+    /*  display: flex;
+    flex-direction: column; */
 }
 .project-card:hover{
     transform: scale(1.2);
-}
-.project-card:after {
-    /* Pseudo-element for the border */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
-    transition: all 0.3s ease-in-out; /* Add smooth transition */
 }
 
 .project-card:hover:after {
@@ -202,34 +196,33 @@ header {
 
 .project-img img{
     width: 100%; /* Set width for image */
-   /* object-fit: cover;  Ensure image fills the space */
-  }
-  
-  .project-info {
+    object-fit: cover;  /*Ensure image fills the space */
+
+}
+.project-info {
     /*width: 50%; /* Set width for project details */
     padding: 1em; /* Add padding for content */
     color: #fff; /* White text over dark background */
     display: flex; /* Arrange category and title elements */
     flex-direction: column; /* Stack them vertically */
     justify-content: space-between; /* Align content at top and bottom */
-  }
-  
-  .project-catigory {
+}
+.project-catigory {
     text-transform: uppercase;
     font-size: 0.8rem; /* Adjust category text size */
     color: #000;
-  }
-  .tt{
+}
+.project-title span{
     color: #000;
-  }
-  .project-title {
+}
+.project-title {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     font-weight: 900;
     font-weight: bold;
     margin-bottom: 5px; /* Add space below title */
-  }
+}
 .more-details {
     /*color: inherit; /* Inherit white text color */
     text-decoration: none; /* Underline link on hover */
@@ -238,4 +231,120 @@ header {
 .more-details:hover {
     /*text-decoration: underline; /* underline on hover */
     color: rgba(4, 217, 255, 0.822);
+}
+
+
+.cards-contact{
+    margin-top: 190px;
+}
+.contact .icon{
+    font-size: 4.5em;
+}
+.contact .info .p{
+    font-size: 2.5em;
+}
+.footer{
+    background-color: #000016;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-title{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.footer-title span{
+    color: #3a6cf4;
+}
+
+@media only screen and (max-width: 1023px){
+    .header{
+        padding: 12px 5px;
+    }
+    .main{
+        padding: 20px;
+    }
+    .navigation a{
+        padding-left: 5px;
+    }
+    .title{
+        font-size: 1.8em;
+    }
+    section{
+        padding: 80px 20px;
+    }
+    .main h2{
+        font-size: 1em;
+    }
+    .main h3{
+        font-size: 1em;
+    }
+    .content{
+        align-content: center;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 488px) {
+    .header{
+        padding: 2px 5px;
+    }
+    .navigation{
+        gap: 5px;
+    }
+    .navigation a{
+        padding-left: 5px;
+    }
+    .title {
+        font-size: 0.8em;
+    }
+    
+    .main h2 {
+        font-size: 0.3em;
+    }
+    
+    .main h2 span {
+        font-size: 2.5rem;
+    }
+    
+    .project-catigory, .project-title span, .info p {
+        font-size: 0.8rem;
+    }
+}
+/* Target screens smaller than 768px (portrait mode on most phones) */
+@media screen and (max-width: 768px) {
+    header {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .navigation a {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+    .main h2 span {
+      font-size: 2.5rem; /* Adjust heading size for smaller screens */
+    }
+    .main h3 {
+      font-size: 1.5em; /* Adjust heading size for smaller screens */
+    }
+    .content {
+      flex-wrap: wrap; /* Wrap content to avoid horizontal overflow */
+    }
+    .card {
+      width: calc(100% - 20px); /* Account for margins on smaller screens */
+      margin: 10px; /* Adjust margin for better spacing */
+    }
+    .project-card {
+      grid-template-columns: repeat(1, 1fr); /* Stack image and info on top of each other for smaller screens */
+    }
+    .cards-contact .card {
+      width: calc(50% - 5px); /* Make cards take up half the width on smaller screens */
+    }
+}
+
+  /* Target screens between 768px and 1024px (landscape mode on tablets) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Add media query specific styles here for tablets */
+    .content {
+      flex-direction: column; /* Stack content vertically on tablets */
+    }
 }
